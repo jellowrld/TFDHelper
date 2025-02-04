@@ -1,5 +1,6 @@
 # TFDHelper
 Helper for TFD for use in combination with Hacks.
+![Menu Screenshot](https://github.com/user-attachments/assets/0fc02944-e853-476d-9987-61ee00db7689)
 
 
 To run the code, you'll need to ensure that the following libraries and tools are installed on your system:
