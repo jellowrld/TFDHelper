@@ -179,10 +179,6 @@ def toggle_gui_visibility():
     else:
         root.deiconify()  # Show the window
 
-def graceful_exit():
-    root.quit()
-    sys.exit()
-
 root = tk.Tk()
 root.title("Mission Helper")
 root.attributes("-topmost", 1)
@@ -218,7 +214,5 @@ keyboard.add_hotkey('f12', toggle_running)  # Toggle the "Colossi Restart" state
 keyboard.add_hotkey('f10', toggle_start_mission)  # Toggle the "Restart Field Mission" state
 keyboard.add_hotkey('f9', toggle_f9_running)  # Toggle the "Infiltration Operation Bot" state
 keyboard.add_hotkey('`', toggle_gui_visibility)  # Toggle the visibility of the GUI (backtick key)
-
-keyboard.add_hotkey('num -', graceful_exit)  # Graceful exit
 
 root.mainloop()
