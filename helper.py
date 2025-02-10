@@ -22,6 +22,16 @@ default_hotkeys = {
     "aim_teleport": "/"
 }
 
+# Set the correct path for Tesseract based on whether the script is bundled or running normally
+if getattr(sys, 'frozen', False):
+    # If the script is running as a bundled executable, get the Tesseract path from the bundled files
+    tesseract_path = os.path.join(sys._MEIPASS, 'tesseract.exe')
+else:
+    # If running as a normal script, use the system installation of Tesseract
+    tesseract_path = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+
+pytesseract.pytesseract.tesseract_cmd = tesseract_path
+
 # Function to load or set up hotkeys
 def load_or_setup_settings():
     if os.path.exists(SETTINGS_FILE):
@@ -191,13 +201,13 @@ screen_width, screen_height = 1920, 1080
 x_position, y_position = screen_width - window_width, 0
 root.geometry(f'{window_width}x{window_height}+{x_position}+{y_position}')
 
-state_label = tk.Label(root, text="Colossi Restart (F12): OFF", font=("Bahnschrift", 8), fg="red", bg="#2e2e2e")
+state_label = tk.Label(root, text="Colossi Restart (F12): OFF", font=("Bahnschrift", 10), fg="red", bg="#2e2e2e")
 state_label.pack(pady=10)
 
-start_mission_label = tk.Label(root, text="Restart Field Mission (F10): OFF", font=("Bahnschrift", 8), fg="red", bg="#2e2e2e")
+start_mission_label = tk.Label(root, text="Restart Field Mission (F10): OFF", font=("Bahnschrift", 10), fg="red", bg="#2e2e2e")
 start_mission_label.pack(pady=10)
 
-f9_label = tk.Label(root, text="Infiltration Operation Bot (F9): OFF", font=("Bahnschrift", 8), fg="red", bg="#2e2e2e")
+f9_label = tk.Label(root, text="Infiltration Operation Bot (F9): OFF", font=("Bahnschrift", 10), fg="red", bg="#2e2e2e")
 f9_label.pack(pady=10)
 
 drag_label = tk.Label(root, text="+", font=("Bahnschrift", 12), fg="white", bg="#2e2e2e")
