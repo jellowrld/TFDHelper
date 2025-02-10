@@ -22,14 +22,20 @@ default_hotkeys = {
     "aim_teleport": "/"
 }
 
-# Set the correct path for Tesseract based on whether the script is bundled or running normally
+# Path to the bundled tesseract executable (for PyInstaller)
 if getattr(sys, 'frozen', False):
-    # If the script is running as a bundled executable, get the Tesseract path from the bundled files
+    # If running as a bundled executable, get the Tesseract path from the bundled files
     tesseract_path = os.path.join(sys._MEIPASS, 'tesseract.exe')
+    tessdata_prefix = os.path.join(sys._MEIPASS, 'tessdata')
 else:
     # If running as a normal script, use the system installation of Tesseract
     tesseract_path = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+    tessdata_prefix = r"C:\Program Files\Tesseract-OCR\tessdata"
 
+# Set the environment variable for Tesseract
+os.environ['TESSDATA_PREFIX'] = tessdata_prefix
+
+# Set Tesseract executable path
 pytesseract.pytesseract.tesseract_cmd = tesseract_path
 
 # Function to load or set up hotkeys
