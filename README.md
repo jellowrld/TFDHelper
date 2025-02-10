@@ -1,6 +1,7 @@
 # TFDHelper
 Helper for TFD for use in combination with Hacks.
-Inflitration requires Auto Press (3rd ability  and Bunny) to funcction properly.. might still work with others?
+
+Inflitration requires Auto Press (3rd ability  and Bunny) to function properly.. might still work with others?
 
 ![Menu Screenshot](https://github.com/user-attachments/assets/0fc02944-e853-476d-9987-61ee00db7689)
 
