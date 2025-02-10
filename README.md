@@ -4,75 +4,102 @@ Helper for TFD for use in combination with Hacks.
 ![Menu Screenshot](https://github.com/user-attachments/assets/0fc02944-e853-476d-9987-61ee00db7689)
 
 
-To run the code, you'll need to ensure that the following libraries and tools are installed on your system:
+To run the code, follow this detailed step-by-step guide:
 
-### 1. **Python** (Version 3.6 or later)
-   - Make sure Python is installed on your computer. You can check if Python is installed by running `python --version` in your terminal or command prompt.
+### 1. **Python (Version 3.6 or later)**
+Make sure that Python is installed on your computer. You can check if Python is installed by running the following command in your terminal or command prompt:
+
+```bash
+python --version
+```
+
+If Python is not installed:
+- Download and install Python from the official website: [https://www.python.org/downloads/](https://www.python.org/downloads/).
 
 ### 2. **Required Libraries**
-   - You will need to install several Python libraries to run the script successfully. Here's a list of them:
-   
-   - **Tkinter** (for GUI)
-     - Tkinter is typically bundled with Python, so you shouldn't need to install it separately. If it's not available, you can install it using the following:
-       - On Windows, Tkinter should already be included.
-       - On Linux, you can install it using:
-         ```bash
-         sudo apt-get install python3-tk
-         ```
-       - On macOS, Tkinter should be available by default.
+You will need several Python libraries for the script to function correctly. Install them using `pip`.
 
-   - **keyboard** (to listen to keyboard events)
-     - Install this library via pip:
-       ```bash
-       pip install keyboard
-       ```
+- **Tkinter** (for GUI):
+  - Tkinter is bundled with Python, so you shouldn’t need to install it separately. If you are missing it:
+    - On **Windows**, Tkinter is included by default.
+    - On **macOS**, Tkinter should already be available.
+    - On **Linux** (Ubuntu/Debian-based systems), install it using:
+      ```bash
+      sudo apt-get install python3-tk
+      ```
 
-   - **Pillow** (for image processing and screen capturing)
-     - Install this library via pip:
-       ```bash
-       pip install pillow
-       ```
+- **keyboard** (for listening to keyboard events):
+  - Install using pip:
+    ```bash
+    pip install keyboard
+    ```
 
-   - **pytesseract** (for Optical Character Recognition, OCR)
-     - Install this library via pip:
-       ```bash
-       pip install pytesseract
-       ```
-     - Additionally, you'll need to install Tesseract itself, which is the OCR engine used by `pytesseract`. Here's how to install it:
+- **Pillow** (for image processing and screen capturing):
+  - Install using pip:
+    ```bash
+    pip install pillow
+    ```
 
-       **Windows:**
-       - Download the Tesseract installer from: https://github.com/UB-Mannheim/tesseract/wiki
-       - Install Tesseract and add it to your system’s PATH environment variable.
+- **pytesseract** (for Optical Character Recognition, OCR):
+  - Install using pip:
+    ```bash
+    pip install pytesseract
+    ```
+  - You also need to install **Tesseract OCR** itself, which the `pytesseract` library uses:
+    - **Windows**:
+      - Download the Tesseract installer from [Tesseract-UB Mannheim](https://github.com/UB-Mannheim/tesseract/wiki) (for Windows).
+      - Install Tesseract and make sure to add it to your system’s **PATH** during installation.
+    - **macOS**:
+      - Install via Homebrew:
+        ```bash
+        brew install tesseract
+        ```
+    - **Linux (Ubuntu/Debian-based systems)**:
+      ```bash
+      sudo apt-get install tesseract-ocr
+      ```
 
-       **macOS:**
-       ```bash
-       brew install tesseract
-       ```
-
-       **Linux (Ubuntu/Debian-based systems):**
-       ```bash
-       sudo apt-get install tesseract-ocr
-       ```
-
-   - **pyautogui** (for automating mouse and keyboard actions)
-     - Install this library via pip:
-       ```bash
-       pip install pyautogui
-       ```
+- **pyautogui** (for automating mouse and keyboard actions):
+  - Install using pip:
+    ```bash
+    pip install pyautogui
+    ```
 
 ### 3. **Operating System**
-   - The script is written for use with Windows, macOS, or Linux. However, screen resolution and window positioning are hardcoded for a 1920x1080 screen, so make sure to adjust the window size or the code if your screen is of a different resolution.
+The script is designed to run on **Windows**, **macOS**, or **Linux**, but the screen resolution and window positioning are hardcoded for a **1920x1080** screen. You will need to adjust the window size or code if your screen resolution is different.
 
-### 4. **Additional Notes:**
-   - **Permissions:** Some of the libraries (such as `keyboard`) may require elevated permissions (administrator rights) to detect key presses, so make sure to run the script with the necessary permissions.
-   - **Keyboard Hooks:** The `keyboard` library uses system-level hooks to detect keys, so it may require running with administrative privileges depending on your operating system.
-   - **Tesseract OCR Language Packs:** If you plan on recognizing text in languages other than English, you may need to install additional language packs for Tesseract. You can do this by downloading the language files from Tesseract's GitHub page or its official website.
+### 4. **Permissions**
+- Some libraries, such as `keyboard`, may require elevated permissions (administrator rights) to detect key presses. So, you might need to run the script with administrative privileges depending on your operating system.
 
-### Running the Code:
-1. Install all the required libraries as mentioned above.
-2. Make sure Tesseract is installed and added to the system's PATH.
-3. Save the script to a `.py` file.
-4. Run the Python script using the following command:
+### 5. **Tesseract OCR Language Packs (Optional)**
+If you want to recognize text in languages other than English, you may need additional language packs for Tesseract. You can download these from the [Tesseract GitHub page](https://github.com/tesseract-ocr/tesseract) or from the official Tesseract website.
+
+### 6. **Save the Script**
+- Save the provided Python script to a file (e.g., `helper.py`).
+
+### 7. **Running the Code**
+Once you've installed all the required libraries and ensured that Tesseract is installed correctly, you can run the script by following these steps:
+
+1. Open a terminal or command prompt.
+2. Navigate to the directory where the script (`helper.py`) is saved.
+3. Run the Python script using the following command:
+
    ```bash
    python helper.py
    ```
+
+### 8. **Using the Script**
+- Once the script is running, you can interact with it using the GUI that appears on your screen. The GUI allows you to toggle different automation tasks by pressing hotkeys (`F12`, `F10`, `F9`, etc.).
+- The GUI will display the current status of each task (e.g., `Colossi Restart`, `Restart Field Mission`, and `Infiltration Operation Bot`).
+
+### 9. **Troubleshooting**
+
+- **Tesseract Not Found:** Ensure that you’ve installed Tesseract and that it's correctly added to your system's PATH. Verify it by running the command `tesseract --version` in the terminal.
+  
+- **Missing Libraries:** Ensure you’ve installed all the required libraries using `pip install ...`.
+
+- **Permissions Issues:** The `keyboard` library may require administrator permissions on some operating systems to work properly. Make sure to run the script with elevated privileges if necessary.
+
+- **Adjusting for Different Screen Resolutions:** The script assumes a screen resolution of 1920x1080. If your screen resolution is different, you may need to adjust the screen coordinates defined in the script (e.g., `(1623, 536, 1770, 566)`).
+
+- Also please note that the release should include everything needed to run so you shoould be able to bypass all this setup using the EXE release.
